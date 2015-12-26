@@ -45,7 +45,7 @@ $ grunt release
 # Notes
 1. The grunt file automatically creates a new self-signed certificate
 every time you make a new build.  This is completely overkill but I
-did it for the ease 
+did it for the ease of use for now and will probably make it smarter later.
 
 # Development Workflow
 1. Edit the files in the <code>src</code> directory.
