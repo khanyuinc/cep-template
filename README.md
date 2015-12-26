@@ -1,12 +1,22 @@
 # What is this project?
 This project is a baseline template for making Adobe CEP extensions 
 based on how I like to code and how I think they should be 
-organized and written.   It also provides is an initial project structure, 
-a grunt grunt script that automatically deploys the code into the 
-CEP extensions directory on every run and automatically creates
-self signed signed zxp files for easy distribution.
+organized and written.   It also provides or does the following:
 
-Currently the code in the repo has only been tested to work 
+1. Clone the code anywhere on your machine and the grunt script
+will automatically deploy it into the CEP extensions directory.
+1. The code has been architected in a way that you can manage
+DEBUG and RELEASE builds of your extension easily.  Debug builds
+are deployed in a way that makes for easy debugging.  Release builds
+reference files that are sensibly stitched, minified, etc.
+1. Packaging and signing of the code is happening automatically on
+every grunt run for simplicity and ease of use.  I'll do this more 
+smartly later.
+1. A very minimal architecture that handles automatic theming 
+(based on Adobe's CEP samples) and a few helper classes to ease
+interop with JSX code.
+
+The code in the repo has only been tested to work 
 with After Effects 2014 and 2015 on OSX.  I'm fairly certain 
 this project will work out of thebox for Windows but it has 
 never been tested and there's no automation around Windows
@@ -16,6 +26,8 @@ This is a work in progress and will become better and more
 complete over time.  Here's a quick list of things I'd like
 to see happen with it:
 
+1. Organize the code in a more modular fashion perhaps more like 
+a jquery or node js module.
 1. Automate the creation of a pkg installer to make distribution easier 
 for people working on small internal projects
 1. Combile all statically loaded <code>jsx</code> files into 
