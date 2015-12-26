@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Cep-template : My baseline template for making and distributing Adobe CEP extensions">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cep-template</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/khanyuinc/cep-template">View on GitHub</a>
+
+          <h1 id="project_title">Cep-template</h1>
+          <h2 id="project_tagline">My baseline template for making and distributing Adobe CEP extensions</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/khanyuinc/cep-template/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/khanyuinc/cep-template/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="what-is-this-project" class="anchor" href="#what-is-this-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is this project?</h1>
+
+<p>This project is a baseline template for making Adobe CEP extensions 
+based on how I like to code and how I think they should be 
+organized and written.   It also provides or does the following:</p>
+
+<ol>
+<li>Clone the code anywhere on your machine and the grunt script
+will automatically deploy it into the CEP extensions directory.</li>
+<li>The code has been architected in a way that you can manage
+DEBUG and RELEASE builds of your extension easily.  Debug builds
+are deployed in a way that makes for easy debugging.  Release builds
+reference files that are sensibly stitched, minified, etc.</li>
+<li>Packaging and signing of the code is happening automatically on
+every grunt run for simplicity and ease of use.  I'll do this more 
+smartly later.</li>
+<li>A very minimal architecture that handles automatic theming 
+(based on Adobe's CEP samples) and a few helper classes to ease
+interop with JSX code.</li>
+</ol>
+
+<p>The code in the repo has only been tested to work 
+with After Effects 2014 and 2015 on OSX.  I'm fairly certain 
+this project will work out of thebox for Windows but it has 
+never been tested and there's no automation around Windows
+either.  If anyone wants to take that on I'd be stoked!</p>
+
+<p>This is a work in progress and will become better and more 
+complete over time.  Here's a quick list of things I'd like
+to see happen with it:</p>
+
+<ol>
+<li>Organize the code in a more modular fashion perhaps more like 
+a jquery or node js module.</li>
+<li>Automate the creation of a pkg installer to make distribution easier 
+for people working on small internal projects</li>
+<li>Combile all statically loaded <code>jsx</code> files into 
+a single <code>jsxbin</code> file.</li>
+<li>Version bump in a sensible way for automated deployment.</li>
+<li>Have a story around adding an existing certificate. </li>
+<li>Not produce a new self-signed cert on every run (not a big deal)</li>
+</ol>
+
+<h1>
+<a id="how-to-get-started" class="anchor" href="#how-to-get-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to get started</h1>
+
+<ol>
+<li>Grab the code</li>
+</ol>
+
+<pre><code>$ git clone https://github.com/khanyuinc/cep-template.git
+$ cd cep-template
+$ npm install
+$ grunt
+</code></pre>
+
+<ol>
+<li>Restart After Effects (or Photoshop, etc.)</li>
+<li>Make something cool (see Development Workflow below for details).</li>
+<li>Make a release build</li>
+</ol>
+
+<pre><code>$ grunt release
+</code></pre>
+
+<ol>
+<li> Make an installer and distribute it.</li>
+</ol>
+
+<h1>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h1>
+
+<ol>
+<li>The grunt file automatically creates a new self-signed certificate
+every time you make a new build.  This is completely overkill but I
+did it for the ease of use for now and will probably make it smarter later.</li>
+</ol>
+
+<h1>
+<a id="development-workflow" class="anchor" href="#development-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development Workflow</h1>
+
+<ol>
+<li>Edit the files in the <code>src</code> directory.</li>
+<li>From the terminal run <code>grunt</code>.</li>
+<li>Test the extension in your target product(s) (i.e. After Effects, etc.).</li>
+<li>Repeat</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cep-template maintained by <a href="https://github.com/khanyuinc">khanyuinc</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-71755958-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
