@@ -1,0 +1,30 @@
+{
+  "name": "khanyu-cep_template",
+  "version": "1.0.0",
+  "description": "Template project used to make Adobe CEP plugins.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-concat-in-order": "^0.1.6",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-processhtml": "^0.3.8",
+    "grunt-script-link-tags": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khanyuinc/cep-template.git"
+  },
+  "author": "Rafi Khan",
+  "license": "ISC"
+}

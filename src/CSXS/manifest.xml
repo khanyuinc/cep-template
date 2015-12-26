@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  Version="5.0" 
+  ExtensionBundleId="com.yourcompany" 
+  ExtensionBundleVersion="1.0" 
+  ExtensionBundleName="Your Company">
+
+  <ExtensionList>
+    <Extension Id="com.yourcompany.ext1" Version="1.0"/>
+  </ExtensionList>
+
+  <ExecutionEnvironment>
+    <HostList>
+      <Host Name="AEFT" Version="[11.0,15.9]" />
+    </HostList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="4.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+
+  <DispatchInfoList>
+    <Extension Id="com.yourcompany.ext1">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./jsx/main.jsx</ScriptPath>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>Ext1</Menu>
+          <Geometry>
+            <Size>
+              <Height>300</Height>
+              <Width>200</Width>
+            </Size>
+            <MaxSize>
+              <Height>400</Height>
+              <Width>300</Width>
+            </MaxSize>
+            <MinSize>
+              <Height>200</Height>
+              <Width>100</Width>
+            </MinSize>
+          </Geometry>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>

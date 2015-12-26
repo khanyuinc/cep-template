@@ -1,0 +1,58 @@
+html{
+	position: : absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+
+	cursor: default;
+	overflow : hidden;
+}
+
+*, select, option, button {
+	margin: 0;
+	padding: 0;
+	font-family: 'LucidaGrande', Tahoma, Verdana, Arial, sans-serif;
+	font-size: 9pt;
+}
+
+body 
+{
+	position: : absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+
+	overflow : hidden;
+}
+
+button, select, input[type=text], input[type=button], input[type=submit]
+{
+	padding: 2px 5px;
+}
+
+input[type=text]:focus 
+{ 
+	background-color: #ffffff; 
+}
+
+input[type=text]:focus 
+{ 
+	color: #000000; 
+}
+
+.app
+{
+	margin: 5px;
+}
+
+.unselectable
+{
+	user-select: none;
+	-webkit-user-select: none;
+}

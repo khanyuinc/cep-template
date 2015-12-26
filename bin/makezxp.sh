@@ -1,0 +1,1 @@
+./ZXPSignCmd -sign ../extension ../extension.zxp self-signed-cert.p12 YOUR_PW -tsa https://timestamp.geotrust.com/tsa

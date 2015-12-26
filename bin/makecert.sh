@@ -1,0 +1,1 @@
+./ZXPSignCmd -selfSignedCert US CA YOUR_COMPANY "YOUR_NAME" YOUR_PW self-signed-cert.p12
