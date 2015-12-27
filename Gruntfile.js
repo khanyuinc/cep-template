@@ -114,6 +114,13 @@ module.exports = function(grunt) {
       makecert : { cwd : SIGN_BIN, cmd : 'sh makecert.sh' },
       makezxp : { cwd : SIGN_BIN, cmd : 'sh makezxp.sh' },
       unzip_zxp : { cwd : SIGN_BIN, cmd : 'unzip ../extension.zxp -d ../extension.signed'}
+    },
+
+    watch : {
+      all : {
+        files : ['src/**'],
+        tasks : ['default']
+      }
     }
   });
 
@@ -123,6 +130,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concat-in-order');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-script-link-tags');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-exec');
@@ -132,16 +140,26 @@ module.exports = function(grunt) {
     var opt = this.options({
       prefix : '',
       on : 'var',
-      variable : 'files'
+      name : 'files'
     });
 
     this.files.forEach(function(file) {
       var arr = [];
 
-      if (opt.on == 'window')
-        arr.push('window["' + opt.variable + '"] = ');
-      else
-        arr.push('var ' + opt.variable + ' = ');
+      switch (opt.on)
+      {
+        case 'window':
+          arr.push('window["' + opt.name + '"] = ');
+          break;
+        case 'var':
+          arr.push('var ' + opt.name + ' = ');
+          break;
+        case 'jsonp':
+          arr.push(opt.name + '(');
+          break;
+        default:
+          throw Error('Option "on" is invalid "' + opt.on + '".  Set it to window, var or jsonp.');
+      }
 
       var files = [];
       var destFile;
@@ -153,6 +171,10 @@ module.exports = function(grunt) {
       });
 
       arr.push(JSON.stringify(files));
+
+      if (opt.on == 'jsonp')
+          arr.push(')');
+
       arr.push(';');
 
       grunt.file.write(destFile, arr.join(''));
@@ -160,7 +182,7 @@ module.exports = function(grunt) {
     });
   }); 
 
- grunt.registerTask('build:debug', [
+  grunt.registerTask('build:debug', [
     'clean:prebuild', 
     'copy:common', 
     'copy:debug', 
